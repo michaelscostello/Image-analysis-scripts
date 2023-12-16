@@ -1,0 +1,32 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Function ClosestDistance(x As Double, y As Double, x1 As Double, y1 As Double, x2 As Double, y2 As Double) As Double\
+    Dim dx As Double\
+    Dim dy As Double\
+    Dim t As Double\
+    Dim closestX As Double\
+    Dim closestY As Double\
+    \
+    dx = x2 - x1\
+    dy = y2 - y1\
+    t = ((x - x1) * dx + (y - y1) * dy) / (dx * dx + dy * dy)\
+    \
+    If t < 0 Then\
+        closestX = x1\
+        closestY = y1\
+    ElseIf t > 1 Then\
+        closestX = x2\
+        closestY = y2\
+    Else\
+        closestX = x1 + t * dx\
+        closestY = y1 + t * dy\
+    End If\
+    \
+    ClosestDistance = Sqr((x - closestX) ^ 2 + (y - closestY) ^ 2)\
+End Function\
+}

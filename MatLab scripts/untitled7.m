@@ -1,0 +1,1 @@
+addpath('/Applications/Fiji.app/scripts')
